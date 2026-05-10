@@ -1,17 +1,25 @@
-<p>Please Enter some values and press "Calculate".</p>
-
-<table>
+<p *ngIf="!results; else resultsTable" class="center">
+  Please Enter some values and press "Calculate".
+</p>
+<ng-template #resultsTable>
+  <table>
     <thead>
-        <tr>
-            <th>Year</th>
-            <th>Investment value</th>
-            <th>Interest (year)</th>
-            <th>Total interest</th>
-            <th>Invested Capital</th>
-        </tr>
+      <tr>
+        <th>Year</th>
+        <th>Investment value</th>
+        <th>Interest (year)</th>
+        <th>Total interest</th>
+        <th>Invested Capital</th>
+      </tr>
     </thead>
-    <tbody>
-        <tr >
-        </tr>
+    <tbody *ngFor="let result of results!">
+      <tr>
+        <td>{{ result.year }}</td>
+        <td>{{ result.valueEndOfYear }}</td>
+        <td>{{ result.interest }}</td>
+        <td>{{ result.totalInterest }}</td>
+        <td>{{ result.totalAmountInvested }}</td>
+      </tr>
     </tbody>
-</table>
+  </table>
+</ng-template>
