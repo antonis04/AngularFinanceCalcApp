@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { NgForOf, NgIf } from '@angular/common';
+import { CurrencyPipe, NgForOf, NgIf } from '@angular/common';
 import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-investment-results',
   standalone: true,
-  imports: [NgForOf, NgIf],
+  imports: [NgForOf, NgIf, CurrencyPipe],
   templateUrl: './investment-results.component.html',
   styleUrl: './investment-results.component.css'
 })
